@@ -11,13 +11,13 @@
 
 <body>
 
-  <!-- 1. NAVBAR -->
+  <!-- Navbar -->
   <header id="site-header">
     <!-- Navbar Bootstrap (navbar-expand-md, sticky in cima) -->
     <nav class="navbar navbar-expand-md navbar-dark py-3">
       <div class="container">
         <a class="navbar-brand" href="#">Atelier</a>
-        
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,7 +33,7 @@
     </nav>
   </header>
 
-  <!-- 2. HERO -->
+  <!-- Hero -->
   <section id="studio" class="hero d-flex align-items-center">
     <!-- Hero: titolo grande, sottotitolo, CTA. Sfondo brand. min-height 80vh -->
     <div class="container text-center">
@@ -45,17 +45,17 @@
     </div>
   </section>
 
-  <!-- 3. SERVIZI -->
+  <!-- Servizi -->
   <section id="servizi" class="servizi">
     <!-- 3 card servizi affiancate da md in su -->
     <div class="container">
-      <div class="text-center mb-5">
+      <div class="text-center mb-5 ">
         <h2 class="fs-2 fw-bold mb-2">I nostri servizi</h2>
         <p class="text-muted">Tre aree di lavoro, una sola attenzione alla qualità.</p>
       </div>
 
       <div class="row g-4">
-        
+
         <div class="col-12 col-md-4">
           <div class="card-servizio text-center">
             <span class="icona">🏡</span>
@@ -84,14 +84,13 @@
     </div>
   </section>
 
-  <!-- 4. CONTATTI -->
-  <section id="contatti" class="contatti">
-    <!-- Form contatti Bootstrap, larghezza limitata e centrata -->
+  <!-- Contatti -->
+  <section id="contatti" class="contatti bg-light">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 text-center mb-4">
-          <h2 class="fs-2 fw-bold mb-2">Parliamo del tuo progetto</h2>
-          <p class="text-muted">Compila il modulo per richiedere una consulenza.</p>
+          <h2 class="fs-2 fw-bold mb-2">Contattaci</h2>
+          <p class="text-muted">Compila il form, ti rispondiamo entro 48 ore.</p>
         </div>
       </div>
 
@@ -99,19 +98,30 @@
         <div class="col-12 col-md-8 col-lg-6">
           <form>
             <div class="mb-3">
-              <label for="nome" class="form-label fw-semibold">Nome e Cognome</label>
-              <input type="text" class="form-control" id="nome" placeholder="Mario Rossi" required>
+              <label for="nome" class="form-label fw-semibold">Nome</label>
+              <input type="text" class="form-control" id="nome" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label fw-semibold">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="nome@esempio.com" required>
+              <input type="email" class="form-control" id="email" required>
             </div>
+
+            <div class="mb-3">
+              <label for="tipoProgetto" class="form-label fw-semibold">Tipo di progetto</label>
+              <select class="form-select" id="tipoProgetto" required>
+                <option value="" disabled selected>Scegli un'opzione</option>
+                <option value="residenziale">Residenziale</option>
+                <option value="interior">Interior Design</option>
+                <option value="ristrutturazioni">Ristrutturazioni</option>
+              </select>
+            </div>
+
             <div class="mb-3">
               <label for="messaggio" class="form-label fw-semibold">Messaggio</label>
-              <textarea class="form-control" id="messaggio" rows="4" placeholder="Descrivi brevemente la tua idea..." required></textarea>
+              <textarea class="form-control" id="messaggio" rows="4" required></textarea>
             </div>
             <div class="text-center mt-4">
-              <button type="submit" class="btn btn-submit rounded-pill px-4 py-2 w-100">Invia richiesta</button>
+              <button type="submit" class="btn btn-brand w-100">Invia</button>
             </div>
           </form>
         </div>
@@ -119,12 +129,12 @@
     </div>
   </section>
 
-  <!-- 5. FOOTER -->
+  <!-- Footer -->
   <footer id="site-footer">
     <!-- 3 colonne: Atelier+indirizzo / Link / Contatti. Copyright in fondo -->
     <div class="container">
       <div class="row g-4">
-        
+
         <div class="col-12 col-md-4">
           <h5 class="fw-bold">Atelier</h5>
           <p>Via del Progetto, 12<br>20100 Milano (MI)<br>P.IVA 0123456789</p>
@@ -151,7 +161,7 @@
       </div>
 
       <div class="copyright">
-        <p class="m-0">&copy; 2026 Atelier. Tutti i diritti riservati.</p>
+        <p class="m-0"> © 2026 Atelier. Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>

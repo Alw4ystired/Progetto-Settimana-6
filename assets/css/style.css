@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -23,6 +25,122 @@ body {
 }
 #site-header .nav-link:hover, #site-header .nav-link.active {
   color: #ffffff;
+}
+
+/* Hero */
+.hero {
+  min-height: 80vh;
+  background-color: hsl(20, 30%, 35%);
+  color: #ffffff;
+}
+.hero .btn-hero {
+  background-color: #ffffff;
+  color: hsl(20, 30%, 35%);
+  border: 1px solid #ffffff;
+  padding: 12px 32px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.hero .btn-hero:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* Servizi */
+.servizi {
+  background-color: #f8f8f8;
+  padding: 80px 0;
+}
+
+.card-servizio {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-servizio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+.card-servizio {
+  background-color: #ffffff;
+  height: 100%;
+  padding: 2rem 1.5rem;
+}
+.card-servizio .icona {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.card-servizio h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: black;
+}
+.card-servizio p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Contatti */
+.contatti {
+  padding: 80px 0;
+}
+.contatti .form-control,
+.contatti .form-select {
+  border-color: #ddd;
+  /* Al focus, il bordo diventa del colore brand */
+}
+.contatti .form-control:focus,
+.contatti .form-select:focus {
+  border-color: hsl(20, 30%, 35%);
+  box-shadow: 0 0 0 0.25rem rgba(45.5%, 31.5%, 24.5%, 0.25);
+}
+.contatti {
+  /* Bottone Invia */
+}
+.contatti .btn-brand {
+  background-color: hsl(20, 30%, 35%);
+  color: #ffffff;
+  border: 1px solid hsl(20, 30%, 35%);
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.contatti .btn-brand:hover {
+  background-color: hsl(20, 30%, 27%);
+  border-color: hsl(20, 30%, 27%);
+  color: #ffffff;
+}
+
+/* Footer */
+#site-footer {
+  background-color: hsl(20, 20%, 15%);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 60px 0 20px;
+}
+#site-footer h5 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+#site-footer a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#site-footer a:hover {
+  color: #ffffff;
+}
+#site-footer .copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

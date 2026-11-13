@@ -16,15 +16,15 @@ $shadow-card-hover: 0 10px 24px rgba(0, 0, 0, 0.12);
 // === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
 
 @mixin card-elevata {
-  border: none;
-  border-radius: 8px;
-  box-shadow: $shadow-card;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 8px;
+    box-shadow: $shadow-card;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: $shadow-card-hover;
-  }
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-card-hover;
+    }
 }
 
 // === Override Bootstrap (sovrascrivi .btn-primary, .bg-primary, .text-primary col tuo colore brand) ===
@@ -33,31 +33,156 @@ $shadow-card-hover: 0 10px 24px rgba(0, 0, 0, 0.12);
 
 // === Stili custom delle sezioni (header sticky, hero, servizi, contatti, footer) ===
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
-  color: $text-color;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: $text-color;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* Navbar Sticky con sfondo scuro */
 #site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: $bg-nav;
-  
-  .navbar-brand {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: $bg-nav;
+
+    .navbar-brand {
+        color: #ffffff;
+        font-weight: 700;
+    }
+
+    .nav-link {
+        color: rgba(255, 255, 255, 0.8);
+
+        &:hover,
+        &.active {
+            color: #ffffff;
+        }
+    }
+}
+
+/* Hero */
+
+.hero {
+    min-height: 80vh;
+    background-color: $bg-primary;
     color: #ffffff;
-    font-weight: 700;
-  }
+
+    .btn-hero {
+        background-color: #ffffff;
+        color: $brand-primary;
+        border: 1px solid #ffffff;
+        padding: 12px 32px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background-color: transparent;
+            color: #ffffff;
+        }
+    }
+}
+
+/* Servizi */
+
+.servizi {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+}
+
+.card-servizio {
+    @include card-elevata;
+    background-color: #ffffff;
+    height: 100%;
+    padding: 2rem 1.5rem;
+
+    .icona {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: $text-color;
+    }
+
+    p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+
+/* Contatti */
+.contatti {
+  padding: 80px 0;
   
-  .nav-link {
-    color: rgba(255, 255, 255, 0.8);
-    &:hover, &.active {
+  .form-control,
+  .form-select {
+    border-color: #ddd;
+    
+    /* Al focus, il bordo diventa del colore brand */
+    &:focus {
+      border-color: $brand-primary;
+      box-shadow: 0 0 0 0.25rem rgba($brand-primary, 0.25);
+    }
+  }
+
+  /* Bottone Invia */
+  .btn-brand {
+    background-color: $brand-primary;
+    color: #ffffff;
+    border: 1px solid $brand-primary;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    
+    &:hover {
+      background-color: $brand-primary-hover;
+      border-color: $brand-primary-hover;
       color: #ffffff;
     }
   }
+}
+
+
+/* Footer */
+
+#site-footer {
+    background-color: $bg-nav;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 60px 0 20px;
+
+    h5 {
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+    }
+
+    a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+
+    .copyright {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+        padding-top: 20px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
 }
