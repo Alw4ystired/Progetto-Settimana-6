@@ -75,5 +75,19 @@ Ogni volta che salverai il file style.scss, il file style.css verrà aggiornato 
 
 (Il tema scuro utilizza sfondi #121212 e #1e1e1e con testi #f0f0f0)
 
+## 🚀 Extra
+
+* **Header sticky**: L'header è reso sticky in scss, con <code>position: sticky;</code>.
+
+* **Tema scuro**: Implementazione completa del dark mode con transizioni fluide e adattamento di tutti i componenti (navbar, card, form, modale, footer).
+
+* **Modale contatti**: Finestra di dialogo per la richiesta di preventivo, con form validato e messaggio di successo animato, collegata al pulsante nella sezione Contattaci.
+
+* **Sezione lavori dinamica**: Le card dei progetti vengono generate dinamicamente via JavaScript a partire da un array di oggetti. Il layout è completamente responsive:
+
+  * Mobile: 1 card per riga (impilate verticalmente).
+  * Tablet (≥ 768px): 2 card per riga.
+  * Desktop (≥ 992px): 3 card per riga.
+
 ## 👨‍💻 Autore
 Sviluppato da Alessandro Lainà durante il corso Epicode come progetto settimanale numero 6

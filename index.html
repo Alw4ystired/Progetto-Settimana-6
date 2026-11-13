@@ -17,22 +17,28 @@
       <div class="container">
         <a class="navbar-brand" href="#">Atelier</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Contenitore per il bottone tema e l'hamburger -->
+        <div class="d-flex align-items-center gap-2 order-md-last">
 
+          <!-- Bottone tema scuro -->
+          <button id="theme-toggle" class="btn theme-btn" aria-label="Cambia tema">
+            🌙
+          </button>
+
+          <!-- Bottone Hamburger -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        </div>
+
+        <!-- Menu -->
         <div class="collapse navbar-collapse" id="nav-menu">
           <ul class="navbar-nav ms-auto align-items-center">
             <li class="nav-item"><a class="nav-link" href="#studio">Studio</a></li>
             <li class="nav-item"><a class="nav-link" href="#servizi">Servizi</a></li>
+            <li class="nav-item"><a class="nav-link" href="#lavori">Lavori</a></li>
             <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
-
-            <!-- Bottone tema scuro -->
-            <li class="nav-item ms-2">
-              <button id="theme-toggle" class="btn theme-btn" aria-label="Cambia tema">
-                🌙
-              </button>
-            </li>
           </ul>
         </div>
       </div>
@@ -41,7 +47,6 @@
 
   <!-- Hero -->
   <section id="studio" class="hero d-flex align-items-center">
-    <!-- Hero: titolo grande, sottotitolo, CTA. Sfondo brand. min-height 80vh -->
     <div class="container text-center">
       <h1 class="display-4 fw-bold mb-4">Architettura per spazi che parlano</h1>
       <p class="lead mb-5 mx-auto" style="max-width: 700px;">
@@ -54,7 +59,6 @@
   <main>
     <!-- Servizi -->
     <section id="servizi" class="servizi bg-body">
-      <!-- 3 card servizi affiancate da md in su -->
       <div class="container">
         <div class="text-center mb-5 ">
           <h2 class="fs-2 fw-bold mb-2">I nostri servizi</h2>
@@ -90,6 +94,27 @@
         </div>
       </div>
     </section>
+
+    <!-- Lavori -->
+    <section id="lavori" class="lavori bg-body">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="fs-2 fw-bold mb-2">I nostri lavori</h2>
+          <p class="text-muted">Una selezione dei nostri progetti recenti.</p>
+        </div>
+
+        <!-- Bottoni per filtrare -->
+        <div class="d-flex justify-content-center gap-2 flex-wrap mb-5" id="filtri-lavori">
+          <button class="btn btn-filtro active" data-filtro="tutti">Tutti</button>
+          <button class="btn btn-filtro" data-filtro="Ristrutturazione">Ristrutturazione</button>
+          <button class="btn btn-filtro" data-filtro="Interior Design">Interior Design</button>
+          <button class="btn btn-filtro" data-filtro="Residenziale">Residenziale</button>
+        </div>
+
+        <!-- Contenitore vuoto dove il JS crea le card -->
+        <div class="row g-4 justify-content-center" id="lavori-container"></div>
+      </div>
+    </section>
   </main>
 
   <!-- Contatti -->
@@ -100,7 +125,6 @@
           <h2 class="fs-2 fw-bold mb-3">Contattaci</h2>
           <p class="text-muted mb-4">Compila il form, ti rispondiamo entro 48 ore.</p>
 
-          <!-- Bottone che apre la modale -->
           <button type="button" class="btn btn-brand px-4 py-2" data-bs-toggle="modal" data-bs-target="#contactModal">
             Apri il modulo di contatto
           </button>
@@ -111,13 +135,11 @@
 
   <!-- Footer -->
   <footer id="site-footer">
-    <!-- 3 colonne: Atelier+indirizzo / Link / Contatti. Copyright in fondo -->
     <div class="container">
       <div class="row g-4">
 
         <div class="col-12 col-md-4">
           <h5 class="fw-bold">Atelier</h5>
-          <!-- Ho provato a fare una lista ma c'era troppo spazio tra un elemento e l'altro, non mi piaceva e ho optato per questa soluzione -->
           <p>Studio di architettura<br>Via dei Pioppi 12, Milano (MI)</p>
         </div>
 
@@ -126,6 +148,7 @@
           <ul class="list-unstyled">
             <li class="mb-2"><a href="#studio">Studio</a></li>
             <li class="mb-2"><a href="#servizi">Servizi</a></li>
+            <li class="mb-2"><a href="#lavori">Lavori</a></li>
             <li class="mb-2"><a href="#contatti">Contatti</a></li>
           </ul>
         </div>
@@ -151,17 +174,14 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
 
-        <!-- Header -->
         <div class="modal-header border-0 pb-0">
           <h5 class="modal-title fw-bold" id="contactModalLabel">Richiedi un preventivo</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
         </div>
 
-        <!-- Body con il form -->
         <div class="modal-body">
           <p class="text-muted small mb-4">Raccontaci il tuo progetto: ti rispondiamo entro 48 ore.</p>
 
-          <!-- Form (visibile di default) -->
           <form id="contact-form">
             <div class="mb-3">
               <label for="nome" class="form-label fw-semibold">Nome</label>
@@ -187,7 +207,6 @@
             <button type="submit" class="btn btn-brand w-100">Invia richiesta</button>
           </form>
 
-          <!-- Messaggio di successo (nascosto di default) -->
           <div class="success-message" id="success-message">
             <div class="alert alert-success d-flex align-items-center mb-0" role="alert">
               <i class="fa-solid fa-circle-check me-2"></i>

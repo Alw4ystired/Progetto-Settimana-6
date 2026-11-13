@@ -2,7 +2,7 @@
 // Definisci qui le tue variabili, mixin, override Bootstrap.
 
 
-// === Variabili (definisci $brand-primary, $brand-secondary, $radius-base, ecc.) ===
+// Variabili
 
 $brand-primary: hsl(20, 30%, 35%);
 $brand-primary-hover: hsl(20, 30%, 27%);
@@ -18,7 +18,7 @@ $dark-bg: #121212;
 $dark-text: #f0f0f0;
 $dark-card-bg: #1e1e1e;
 
-// === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
+// Mixin
 
 @mixin card-elevata {
     border: none;
@@ -32,11 +32,7 @@ $dark-card-bg: #1e1e1e;
     }
 }
 
-// === Override Bootstrap (sovrascrivi .btn-primary, .bg-primary, .text-primary col tuo colore brand) ===
-
-
-
-// === Stili custom delle sezioni (header sticky, hero, servizi, contatti, footer) ===
+// Stili miei
 
 *,
 *::before,
@@ -49,7 +45,7 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Navbar Sticky con sfondo scuro */
+/* Navbar Sticky */
 #site-header {
     position: sticky;
     top: 0;
@@ -60,19 +56,10 @@ body {
         color: #ffffff;
         font-weight: 700;
     }
-
-    .nav-link {
-        color: rgba(255, 255, 255, 0.8);
-
-        &:hover,
-        &.active {
-            color: #ffffff;
-        }
-    }
 }
 
-/* Hero */
 
+/* Hero */
 .hero {
     min-height: 80vh;
     background-color: $bg-primary;
@@ -96,7 +83,6 @@ body {
 }
 
 /* Servizi */
-
 .servizi {
     padding: 80px 0;
 }
@@ -124,6 +110,72 @@ body {
         font-size: 0.95rem;
         color: #666;
         line-height: 1.6;
+        margin: 0;
+    }
+}
+
+/* Lavori */
+
+.lavori {
+    padding: 80px 0;
+}
+
+/* Bottoni filtro lavori */
+.btn-filtro {
+    background-color: transparent;
+    color: $brand-primary;
+    border: 1px solid $brand-primary;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &.active {
+        background-color: $brand-primary;
+        color: #ffffff;
+    }
+}
+
+.card-lavoro {
+    @include card-elevata;
+    background-color: #ffffff;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .categoria {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $brand-primary;
+        margin-bottom: 0.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $text-color;
+        margin-bottom: 1rem;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 1;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.5;
         margin: 0;
     }
 }
@@ -177,9 +229,7 @@ body {
     }
 }
 
-
 /* Footer */
-
 #site-footer {
     background-color: $bg-nav;
     color: rgba(255, 255, 255, 0.7);
@@ -210,7 +260,6 @@ body {
 }
 
 /* Tema scuro */
-
 .theme-btn {
     background: transparent !important;
     border: none !important;
@@ -227,36 +276,38 @@ body {
 
     &:hover {
         transform: scale(1.1);
-        /* Leggero zoom al passaggio del mouse */
     }
 }
 
 /* Messaggio di successo nella modale */
 .success-message {
-    display: none; /* Nascosto di default */
+    display: none;
     animation: fadeIn 0.3s ease forwards;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* ==========================================
-   TEMA SCURO (Tutte le regole raggruppate)
-   ========================================== */
+/* Tema scuro */
 [data-bs-theme="dark"] {
     body {
         background-color: $dark-bg;
         color: $dark-text;
     }
 
-    /* Navbar tema scuro */
     #site-header {
         background-color: #000000;
     }
 
-    /* Card Servizi tema scuro */
     .card-servizio {
         background-color: $dark-card-bg;
 
@@ -268,16 +319,51 @@ body {
             color: #aaaaaa;
         }
 
-        /* Sovrascrivo l'ombra con una bianca trasparente */
         box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
 
-        /* Al passaggio del mouse, l'ombra bianca si espande */
         &:hover {
-            box-shadow: 0 10px 24px rgba(255, 255, 255, 0.15); 
+            box-shadow: 0 10px 24px rgba(255, 255, 255, 0.15);
         }
     }
 
-    /* Sezione Contatti tema scuro */
+    /* Bottoni filtro tema scuro */
+    .btn-filtro {
+        color: $brand-primary;
+        border-color: $brand-primary;
+
+        &:hover,
+        &.active {
+            background-color: $brand-primary;
+            color: #ffffff;
+        }
+    }
+
+    /* Card lavori tema scuro*/
+    .card-lavoro {
+        background-color: $dark-card-bg;
+        box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+
+        &:hover {
+            box-shadow: 0 10px 24px rgba(255, 255, 255, 0.15);
+        }
+
+        .categoria {
+            color: $brand-primary;
+        }
+
+        h3 {
+            color: $dark-text;
+        }
+
+        p {
+            color: #aaaaaa;
+        }
+    }
+
+    .lavori {
+        background-color: $dark-bg;
+    }
+
     .contatti {
         background-color: $dark-bg;
 
@@ -298,12 +384,10 @@ body {
         background-color: $dark-bg !important;
     }
 
-    /* Footer tema scuro */
     #site-footer {
         background-color: #000000;
     }
 
-    /* Modale tema scuro */
     .modal-content {
         background-color: $dark-card-bg;
         color: $dark-text;
@@ -335,7 +419,6 @@ body {
         filter: invert(1);
     }
 
-    /* Messaggio di successo tema scuro */
     .alert-success {
         background-color: #0f5132;
         color: #d1e7dd;
@@ -344,11 +427,12 @@ body {
 }
 
 /* Transizione fluida per il cambio tema */
-
 body,
 .hero,
 .servizi,
+.lavori,
 .card-servizio,
+.card-lavoro,
 .contatti,
 #site-footer,
 .form-control,

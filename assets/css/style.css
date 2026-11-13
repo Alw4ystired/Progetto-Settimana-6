@@ -9,7 +9,7 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Navbar Sticky con sfondo scuro */
+/* Navbar Sticky */
 #site-header {
   position: sticky;
   top: 0;
@@ -19,12 +19,6 @@ body {
 #site-header .navbar-brand {
   color: #ffffff;
   font-weight: 700;
-}
-#site-header .nav-link {
-  color: rgba(255, 255, 255, 0.8);
-}
-#site-header .nav-link:hover, #site-header .nav-link.active {
-  color: #ffffff;
 }
 
 /* Hero */
@@ -83,6 +77,74 @@ body {
   font-size: 0.95rem;
   color: #666;
   line-height: 1.6;
+  margin: 0;
+}
+
+/* Lavori */
+.lavori {
+  padding: 80px 0;
+}
+
+/* Bottoni filtro lavori */
+.btn-filtro {
+  background-color: transparent;
+  color: hsl(20, 30%, 35%);
+  border: 1px solid hsl(20, 30%, 35%);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-filtro:hover, .btn-filtro.active {
+  background-color: hsl(20, 30%, 35%);
+  color: #ffffff;
+}
+
+.card-lavoro {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lavoro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+.card-lavoro {
+  background-color: #ffffff;
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.card-lavoro .categoria {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: hsl(20, 30%, 35%);
+  margin-bottom: 0.5rem;
+}
+.card-lavoro h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1rem;
+}
+.card-lavoro img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.card-lavoro p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -173,12 +235,11 @@ body {
 }
 .theme-btn:hover {
   transform: scale(1.1);
-  /* Leggero zoom al passaggio del mouse */
 }
 
 /* Messaggio di successo nella modale */
 .success-message {
-  display: none; /* Nascosto di default */
+  display: none;
   animation: fadeIn 0.3s ease forwards;
 }
 
@@ -192,21 +253,13 @@ body {
     transform: translateY(0);
   }
 }
-/* ==========================================
-   TEMA SCURO (Tutte le regole raggruppate)
-   ========================================== */
+/* Tema scuro */
 [data-bs-theme=dark] body {
   background-color: #121212;
   color: #f0f0f0;
 }
-[data-bs-theme=dark] {
-  /* Navbar tema scuro */
-}
 [data-bs-theme=dark] #site-header {
   background-color: #000000;
-}
-[data-bs-theme=dark] {
-  /* Card Servizi tema scuro */
 }
 [data-bs-theme=dark] .card-servizio {
   background-color: #1e1e1e;
@@ -218,15 +271,43 @@ body {
   color: #aaaaaa;
 }
 [data-bs-theme=dark] .card-servizio {
-  /* Sovrascrivo l'ombra con una bianca trasparente */
   box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
-  /* Al passaggio del mouse, l'ombra bianca si espande */
 }
 [data-bs-theme=dark] .card-servizio:hover {
   box-shadow: 0 10px 24px rgba(255, 255, 255, 0.15);
 }
 [data-bs-theme=dark] {
-  /* Sezione Contatti tema scuro */
+  /* Bottoni filtro tema scuro */
+}
+[data-bs-theme=dark] .btn-filtro {
+  color: hsl(20, 30%, 35%);
+  border-color: hsl(20, 30%, 35%);
+}
+[data-bs-theme=dark] .btn-filtro:hover, [data-bs-theme=dark] .btn-filtro.active {
+  background-color: hsl(20, 30%, 35%);
+  color: #ffffff;
+}
+[data-bs-theme=dark] {
+  /* Card lavori tema scuro*/
+}
+[data-bs-theme=dark] .card-lavoro {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+[data-bs-theme=dark] .card-lavoro:hover {
+  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.15);
+}
+[data-bs-theme=dark] .card-lavoro .categoria {
+  color: hsl(20, 30%, 35%);
+}
+[data-bs-theme=dark] .card-lavoro h3 {
+  color: #f0f0f0;
+}
+[data-bs-theme=dark] .card-lavoro p {
+  color: #aaaaaa;
+}
+[data-bs-theme=dark] .lavori {
+  background-color: #121212;
 }
 [data-bs-theme=dark] .contatti {
   background-color: #121212;
@@ -245,14 +326,8 @@ body {
 [data-bs-theme=dark] .contatti.bg-light {
   background-color: #121212 !important;
 }
-[data-bs-theme=dark] {
-  /* Footer tema scuro */
-}
 [data-bs-theme=dark] #site-footer {
   background-color: #000000;
-}
-[data-bs-theme=dark] {
-  /* Modale tema scuro */
 }
 [data-bs-theme=dark] .modal-content {
   background-color: #1e1e1e;
@@ -280,9 +355,6 @@ body {
 [data-bs-theme=dark] .modal-header .btn-close {
   filter: invert(1);
 }
-[data-bs-theme=dark] {
-  /* Messaggio di successo tema scuro */
-}
 [data-bs-theme=dark] .alert-success {
   background-color: #0f5132;
   color: #d1e7dd;
@@ -293,7 +365,9 @@ body {
 body,
 .hero,
 .servizi,
+.lavori,
 .card-servizio,
+.card-lavoro,
 .contatti,
 #site-footer,
 .form-control,
