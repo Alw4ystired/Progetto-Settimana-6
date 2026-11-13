@@ -68,34 +68,31 @@ body {
 
 /* Hero */
 
-/* Hero */
-
 .hero {
-  min-height: 80vh;
-  background-color: $bg-primary;
-  color: #ffffff;
-  
-  .btn-hero {
-       background-color: transparent;
+    min-height: 80vh;
+    background-color: $bg-primary;
     color: #ffffff;
-    border: transparent; 
-    padding: 12px 32px;
-    font-weight: 600;
-    border-radius: 10px; 
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    
-    &:hover {
-      background-color: $brand-primary-hover; 
-      border-color: $brand-primary-hover;
-      color: #ffffff;
+
+    .btn-hero {
+        background-color: transparent;
+        color: #ffffff;
+        border: transparent;
+        padding: 12px 32px;
+        font-weight: 600;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+
+        &:hover {
+            background-color: $brand-primary-hover;
+            border-color: $brand-primary-hover;
+            color: #ffffff;
+        }
     }
-  }
 }
 
 /* Servizi */
 
 .servizi {
-    background-color: #f8f8f8;
     padding: 80px 0;
 }
 
@@ -126,23 +123,41 @@ body {
     }
 }
 
+
 /* Contatti */
 .contatti {
-  padding: 80px 0;
-  
-  .form-control,
-  .form-select {
-    border-color: #ddd;
-    
-    /* Al focus, il bordo diventa del colore brand */
-    &:focus {
-      border-color: $brand-primary;
-      box-shadow: 0 0 0 0.25rem rgba($brand-primary, 0.25);
-    }
-  }
+    padding: 80px 0;
+    /* background-color: #ffffff; <-- RIMOSSA O COMMENTATA */
 
-  /* Bottone Invia */
-  .btn-brand {
+    .form-control,
+    .form-select {
+        border-color: #ddd;
+
+        &:focus {
+            border-color: $brand-primary;
+            box-shadow: 0 0 0 0.25rem rgba($brand-primary, 0.25);
+        }
+    }
+
+    .btn-brand {
+        background-color: $brand-primary;
+        color: #ffffff;
+        border: 1px solid $brand-primary;
+        padding: 12px;
+        font-weight: 600;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+
+        &:hover {
+            background-color: $brand-primary-hover;
+            border-color: $brand-primary-hover;
+            color: #ffffff;
+        }
+    }
+}
+
+/* Bottone Invia */
+.btn-brand {
     background-color: $brand-primary;
     color: #ffffff;
     border: 1px solid $brand-primary;
@@ -150,14 +165,14 @@ body {
     font-weight: 600;
     border-radius: 4px;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    
+
     &:hover {
-      background-color: $brand-primary-hover;
-      border-color: $brand-primary-hover;
-      color: #ffffff;
+        background-color: $brand-primary-hover;
+        border-color: $brand-primary-hover;
+        color: #ffffff;
     }
-  }
 }
+
 
 
 /* Footer */
