@@ -28,21 +28,24 @@ body {
 }
 
 /* Hero */
+/* Hero */
 .hero {
   min-height: 80vh;
   background-color: hsl(20, 30%, 35%);
   color: #ffffff;
 }
 .hero .btn-hero {
-  background-color: #ffffff;
-  color: hsl(20, 30%, 35%);
-  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  border: transparent;
   padding: 12px 32px;
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .hero .btn-hero:hover {
-  background-color: transparent;
+  background-color: hsl(20, 30%, 27%);
+  border-color: hsl(20, 30%, 27%);
   color: #ffffff;
 }
 

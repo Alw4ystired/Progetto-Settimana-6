@@ -68,24 +68,28 @@ body {
 
 /* Hero */
 
+/* Hero */
+
 .hero {
-    min-height: 80vh;
-    background-color: $bg-primary;
+  min-height: 80vh;
+  background-color: $bg-primary;
+  color: #ffffff;
+  
+  .btn-hero {
+       background-color: transparent;
     color: #ffffff;
-
-    .btn-hero {
-        background-color: #ffffff;
-        color: $brand-primary;
-        border: 1px solid #ffffff;
-        padding: 12px 32px;
-        font-weight: 600;
-        transition: background-color 0.3s ease, color 0.3s ease;
-
-        &:hover {
-            background-color: transparent;
-            color: #ffffff;
-        }
+    border: transparent; 
+    padding: 12px 32px;
+    font-weight: 600;
+    border-radius: 10px; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    
+    &:hover {
+      background-color: $brand-primary-hover; 
+      border-color: $brand-primary-hover;
+      color: #ffffff;
     }
+  }
 }
 
 /* Servizi */
