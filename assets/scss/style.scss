@@ -13,6 +13,11 @@ $bg-nav: hsl(20, 20%, 15%);
 $shadow-card: 0 2px 6px rgba(0, 0, 0, 0.08);
 $shadow-card-hover: 0 10px 24px rgba(0, 0, 0, 0.12);
 
+// Variabili tema scuro
+$dark-bg: #121212;
+$dark-text: #f0f0f0;
+$dark-card-bg: #1e1e1e;
+
 // === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
 
 @mixin card-elevata {
@@ -127,7 +132,6 @@ body {
 /* Contatti */
 .contatti {
     padding: 80px 0;
-    /* background-color: #ffffff; <-- RIMOSSA O COMMENTATA */
 
     .form-control,
     .form-select {
@@ -174,7 +178,6 @@ body {
 }
 
 
-
 /* Footer */
 
 #site-footer {
@@ -203,5 +206,153 @@ body {
         padding-top: 20px;
         font-size: 0.85rem;
         text-align: center;
+    }
+}
+
+/* Tema scuro */
+
+.theme-btn {
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        /* Leggero zoom al passaggio del mouse */
+    }
+}
+
+[data-bs-theme="dark"] {
+    body {
+        background-color: $dark-bg;
+        color: $dark-text;
+    }
+
+    /* Navbar tema scuro */
+    #site-header {
+        background-color: #000000;
+    }
+
+    /* Card Servizi tema scuro*/
+    .card-servizio {
+        background-color: $dark-card-bg;
+
+        h3 {
+            color: $dark-text;
+        }
+
+        p {
+            color: #aaaaaa;
+        }
+    }
+
+    /* Sezione Contatti tema scuro */
+    .contatti {
+        background-color: $dark-bg;
+        /* Sovrascrive bg-light di Bootstrap */
+
+        .form-control,
+        .form-select {
+            background-color: #2a2a2a;
+            border-color: #444;
+            color: #ffffff;
+
+            &:focus {
+                background-color: #2a2a2a;
+                color: #ffffff;
+            }
+        }
+    }
+
+    .contatti.bg-light {
+        background-color: $dark-bg !important;
+        /* Sovrascrive bg-light di Bootstrap */
+    }
+
+    /* Footer tema scuro */
+    #site-footer {
+        background-color: #000000;
+    }
+}
+
+/* Transazione fluida */
+
+body,
+.hero,
+.servizi,
+.card-servizio,
+.contatti,
+#site-footer,
+.form-control,
+.form-select,
+.navbar,
+#site-header {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Modale contatti */
+
+/* Messaggio di successo nella modale */
+.success-message {
+  display: none; /* Nascosto di default */
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Adattamento del messaggio al tema scuro */
+[data-bs-theme="dark"] {
+  .alert-success {
+    background-color: #0f5132; /* Verde scuro di Bootstrap */
+    color: #d1e7dd; /* Testo verde chiaro */
+    border-color: #0a3622;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Modale contatti tema scuro*/
+
+[data-bs-theme="dark"] {
+    .modal-content {
+        background-color: $dark-card-bg;
+        color: $dark-text;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #333; // Linea sottile scura
+    }
+
+    .modal-body .text-muted {
+        color: #aaaaaa !important; // Adatta il testo muted al tema scuro
+    }
+
+    /* Campi del form nella modale scura */
+    .modal-body .form-control,
+    .modal-body .form-select {
+        background-color: #2a2a2a;
+        border-color: #444;
+        color: #ffffff;
+
+        &:focus {
+            background-color: #2a2a2a;
+            color: #ffffff;
+            border-color: $brand-primary;
+            box-shadow: 0 0 0 0.25rem rgba($brand-primary, 0.25);
+        }
+    }
+
+    /* Bottone chiudi (X) bianco in tema scuro */
+    .modal-header .btn-close {
+        filter: invert(1); // Inverte i colori (da nero a bianco)
     }
 }
