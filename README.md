@@ -17,7 +17,7 @@ Questo progetto è stato sviluppato mettendo in pratica i concetti di:
 
 ## ✨ Caratteristiche Principali
 
-* **Design Responsivo**: Layout ottimizzato per mobile, tablet e desktop grazie al sistema a griglia di Bootstrap.
+* **Design Responsive**: Layout ottimizzato per mobile, tablet e desktop grazie al sistema a griglia di Bootstrap.
 * **Navbar Sticky**: La barra di navigazione rimane fissa in alto durante lo scroll con un menu hamburger automatico su schermi piccoli.
 * **Effetto Hover sulle Card**: Le card dei servizi si sollevano e aumentano la loro ombra al passaggio del mouse (desktop), grazie al mixin SCSS.
 * **Tema Chiaro / Tema Scuro**: 
@@ -76,6 +76,8 @@ Ogni volta che salverai il file style.scss, il file style.css verrà aggiornato 
 (Il tema scuro utilizza sfondi #121212 e #1e1e1e con testi #f0f0f0)
 
 ## 🚀 Extra
+
+Anche se elencate nella sezione Caratteristiche Principali, questi sono gli extra del progetto.
 
 * **Header sticky**: L'header è reso sticky in scss, con <code>position: sticky;</code>.
 
