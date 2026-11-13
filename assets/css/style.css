@@ -176,6 +176,25 @@ body {
   /* Leggero zoom al passaggio del mouse */
 }
 
+/* Messaggio di successo nella modale */
+.success-message {
+  display: none; /* Nascosto di default */
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ==========================================
+   TEMA SCURO (Tutte le regole raggruppate)
+   ========================================== */
 [data-bs-theme=dark] body {
   background-color: #121212;
   color: #f0f0f0;
@@ -187,7 +206,7 @@ body {
   background-color: #000000;
 }
 [data-bs-theme=dark] {
-  /* Card Servizi tema scuro*/
+  /* Card Servizi tema scuro */
 }
 [data-bs-theme=dark] .card-servizio {
   background-color: #1e1e1e;
@@ -198,12 +217,19 @@ body {
 [data-bs-theme=dark] .card-servizio p {
   color: #aaaaaa;
 }
+[data-bs-theme=dark] .card-servizio {
+  /* Sovrascrivo l'ombra con una bianca trasparente */
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  /* Al passaggio del mouse, l'ombra bianca si espande */
+}
+[data-bs-theme=dark] .card-servizio:hover {
+  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.15);
+}
 [data-bs-theme=dark] {
   /* Sezione Contatti tema scuro */
 }
 [data-bs-theme=dark] .contatti {
   background-color: #121212;
-  /* Sovrascrive bg-light di Bootstrap */
 }
 [data-bs-theme=dark] .contatti .form-control,
 [data-bs-theme=dark] .contatti .form-select {
@@ -218,7 +244,6 @@ body {
 }
 [data-bs-theme=dark] .contatti.bg-light {
   background-color: #121212 !important;
-  /* Sovrascrive bg-light di Bootstrap */
 }
 [data-bs-theme=dark] {
   /* Footer tema scuro */
@@ -226,46 +251,9 @@ body {
 [data-bs-theme=dark] #site-footer {
   background-color: #000000;
 }
-
-/* Transazione fluida */
-body,
-.hero,
-.servizi,
-.card-servizio,
-.contatti,
-#site-footer,
-.form-control,
-.form-select,
-.navbar,
-#site-header {
-  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+[data-bs-theme=dark] {
+  /* Modale tema scuro */
 }
-
-/* Modale contatti */
-/* Messaggio di successo nella modale */
-.success-message {
-  display: none; /* Nascosto di default */
-  animation: fadeIn 0.3s ease forwards;
-}
-
-/* Adattamento del messaggio al tema scuro */
-[data-bs-theme=dark] .alert-success {
-  background-color: #0f5132; /* Verde scuro di Bootstrap */
-  color: #d1e7dd; /* Testo verde chiaro */
-  border-color: #0a3622;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Modale contatti tema scuro*/
 [data-bs-theme=dark] .modal-content {
   background-color: #1e1e1e;
   color: #f0f0f0;
@@ -275,9 +263,6 @@ body,
 }
 [data-bs-theme=dark] .modal-body .text-muted {
   color: #aaaaaa !important;
-}
-[data-bs-theme=dark] {
-  /* Campi del form nella modale scura */
 }
 [data-bs-theme=dark] .modal-body .form-control,
 [data-bs-theme=dark] .modal-body .form-select {
@@ -292,11 +277,30 @@ body,
   border-color: hsl(20, 30%, 35%);
   box-shadow: 0 0 0 0.25rem rgba(45.5%, 31.5%, 24.5%, 0.25);
 }
-[data-bs-theme=dark] {
-  /* Bottone chiudi (X) bianco in tema scuro */
-}
 [data-bs-theme=dark] .modal-header .btn-close {
   filter: invert(1);
+}
+[data-bs-theme=dark] {
+  /* Messaggio di successo tema scuro */
+}
+[data-bs-theme=dark] .alert-success {
+  background-color: #0f5132;
+  color: #d1e7dd;
+  border-color: #0a3622;
+}
+
+/* Transizione fluida per il cambio tema */
+body,
+.hero,
+.servizi,
+.card-servizio,
+.contatti,
+#site-footer,
+.form-control,
+.form-select,
+.navbar,
+#site-header {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 /*# sourceMappingURL=style.css.map */
