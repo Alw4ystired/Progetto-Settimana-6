@@ -1,0 +1,63 @@
+// Atelier — Week Project Settimana VI
+// Definisci qui le tue variabili, mixin, override Bootstrap.
+
+
+// === Variabili (definisci $brand-primary, $brand-secondary, $radius-base, ecc.) ===
+
+$brand-primary: hsl(20, 30%, 35%);
+$brand-primary-hover: hsl(20, 30%, 27%);
+$text-color: black;
+$bg-primary: hsl(20, 30%, 35%);
+$bg-nav: hsl(20, 20%, 15%);
+
+$shadow-card: 0 2px 6px rgba(0, 0, 0, 0.08);
+$shadow-card-hover: 0 10px 24px rgba(0, 0, 0, 0.12);
+
+// === Mixin (definisci almeno @mixin card-elevata o equivalente) ===
+
+@mixin card-elevata {
+  border: none;
+  border-radius: 8px;
+  box-shadow: $shadow-card;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+// === Override Bootstrap (sovrascrivi .btn-primary, .bg-primary, .text-primary col tuo colore brand) ===
+
+
+
+// === Stili custom delle sezioni (header sticky, hero, servizi, contatti, footer) ===
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+  color: $text-color;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Navbar Sticky con sfondo scuro */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $bg-nav;
+  
+  .navbar-brand {
+    color: #ffffff;
+    font-weight: 700;
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    &:hover, &.active {
+      color: #ffffff;
+    }
+  }
+}

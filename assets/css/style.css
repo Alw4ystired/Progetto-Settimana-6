@@ -1,0 +1,28 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Navbar Sticky con sfondo scuro */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: hsl(20, 20%, 15%);
+}
+#site-header .navbar-brand {
+  color: #ffffff;
+  font-weight: 700;
+}
+#site-header .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+#site-header .nav-link:hover, #site-header .nav-link.active {
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=style.css.map */
